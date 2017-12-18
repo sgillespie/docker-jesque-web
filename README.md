@@ -9,7 +9,10 @@ In order to run this image, you must have
 ## Usage
 Start a Jesque-Web instance
 
-    docker run --env REDIS_HOST=redis.example.com sgillespie/jesque-web
+    docker run \
+      --env REDIS_HOST=redis.example.com \
+      --publish 8080:8080 \
+      sgillespie/jesque-web
 
 ### Environment Variables
 This image will use the following environment variables:
