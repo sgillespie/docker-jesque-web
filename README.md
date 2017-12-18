@@ -1,17 +1,33 @@
 # Docker Jesque Web
 A dockerized version of [Jesque-Web](https://github.com/gresrun/jesque-web)
 
-# Dependencies
+## Dependencies
 In order to run this image, you must have
 
  * [Docker Engine](https://docs.docker.com/engine/installation/)
 
-# Acknowledgements
+## Usage
+Start a Jesque-Web instance
+
+    docker run --env REDIS_HOST=redis.example.com sgillespie/jesque-web
+
+### Environment Variables
+This image will use the following environment variables:
+
+ * `REDIS_HOST` (default: *localhost*)
+ * `REDIS_PORT` (default: *6379*)
+ * `REDIS_TIMEOUT` (default: *5000*)
+ * `REDIS_PASSWORD` (no default)
+ * `REDIS_NAMESPACE` (default: *resque*)
+ * `REDIS_DATABASE` (default: *0*)
+
+
+## Acknowledgements
 This image uses Jesque-Web:
 
  * https://github.com/gresrun/jesque-web
 
-# License
+## License
 Copyright 2017 Sean Gillespie
 
 Licensed under the Apache License, Version 2.0 (the "License");
