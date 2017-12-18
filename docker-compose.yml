@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  jesque-web:
+    image: sgillespie/jesque-web
+    ports:
+      - '8080:8080'
