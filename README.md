@@ -23,6 +23,7 @@ This image will use the following environment variables:
  * `REDIS_PASSWORD` (no default)
  * `REDIS_NAMESPACE` (default: *resque*)
  * `REDIS_DATABASE` (default: *0*)
+ * `JETTY_CONTEXT` (default: */*)
 
 
 ## Acknowledgements
