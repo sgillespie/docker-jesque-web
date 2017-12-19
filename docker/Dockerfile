@@ -12,9 +12,11 @@ FROM jetty:jre8-alpine
 USER root
 RUN apk update && apk add gettext
 
-COPY --from=builder /usr/src/target/jesque-web-1.1.0-SNAPSHOT/ ${JETTY_BASE}/webapps/ROOT
-COPY redis.properties.tmpl ${JETTY_BASE}/webapps/ROOT/WEB-INF/classes/META-INF/spring/
-RUN chown -R jetty:jetty "${JETTY_BASE}/webapps"
+COPY --from=builder /usr/src/target/jesque-web-1.1.0-SNAPSHOT/ /jesque-web.war
+COPY redis.properties.tmpl /jesque-web.war/WEB-INF/classes/META-INF/spring/
+RUN chown -R jetty:jetty /jesque-web.war
+
+COPY jesque-web.xml.tmpl "${JETTY_BASE}/webapps/jesque-web.xml.tmpl"
 
 USER jetty
 COPY entrypoint.sh /entrypoint.sh
